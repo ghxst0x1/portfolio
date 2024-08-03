@@ -5,7 +5,7 @@ export default function Typer({}) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [text, count] = useTypewriter({
     words: [
-      "Hi, I'm a CyberSecurity Student",
+      "Hi, I'm a Certified Ethical Hacker / Penetration Tester",
       "Amateur Software Developer",
       "Backend Developer",
     ],

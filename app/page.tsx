@@ -31,22 +31,24 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center lg:justify-end w-full mt-10 lg:mt-0">
-          <div className="grid-borders grid-cols-2 w-full max-w-[500px]">
-            <div className="grid-cell p-8">
-              <span className="font-serif text-[2.5rem] color-foreground block leading-none mb-1">5+</span>
-              <span className="font-mono text-[0.68rem] text-white-muted tracking-[0.08em] uppercase">Years Experience</span>
+          <div className="w-full max-w-[500px] bg-surface border border-border-color rounded-[4px] p-6 font-mono text-[0.8rem] text-white-dim leading-[1.6]">
+            <div className="flex items-center gap-2 mb-4 border-b border-border-color pb-3">
+              <span className="w-3 h-3 rounded-full bg-error"></span>
+              <span className="w-3 h-3 rounded-full bg-[#facc15]"></span>
+              <span className="w-3 h-3 rounded-full bg-accent"></span>
+              <span className="ml-2 text-[0.7rem] text-white-muted uppercase tracking-[0.1em]">terminal — whoami</span>
             </div>
-            <div className="grid-cell p-8">
-              <span className="font-serif text-[2.5rem] color-foreground block leading-none mb-1">CVEs</span>
-              <span className="font-mono text-[0.68rem] text-white-muted tracking-[0.08em] uppercase">Published</span>
-            </div>
-            <div className="grid-cell p-8">
-              <span className="font-serif text-[2.5rem] color-foreground block leading-none mb-1">OSCP</span>
-              <span className="font-mono text-[0.68rem] text-white-muted tracking-[0.08em] uppercase">Certified</span>
-            </div>
-            <div className="grid-cell p-8">
-              <span className="font-serif text-[2.5rem] color-foreground block leading-none mb-1">100+</span>
-              <span className="font-mono text-[0.68rem] text-white-muted tracking-[0.08em] uppercase">Assessments</span>
+            <div className="text-accent">&gt; initiating connection...</div>
+            <div className="mb-4">&gt; target acquired.</div>
+            <div className="text-foreground">Capabilities:</div>
+            <ul className="pl-4 mt-1 list-none space-y-1 mb-4">
+              <li>— Penetration Testing</li>
+              <li>— Red Teaming</li>
+              <li>— Reverse Engineering</li>
+              <li>— Exploit Development</li>
+            </ul>
+            <div className="flex items-center gap-1">
+              <span className="text-accent mr-2">➜</span> <span className="text-white-dim">~</span> <span className="text-foreground animate-pulse">_</span>
             </div>
           </div>
         </div>

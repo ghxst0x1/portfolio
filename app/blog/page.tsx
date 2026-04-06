@@ -5,36 +5,24 @@ export default function BlogIndex() {
   const allPosts = getSortedPostsData();
 
   return (
-    <div className="flex flex-col gap-8 max-w-3xl mx-auto pt-8">
-      <div className="flex flex-col gap-2">
-        <h1 className="font-serif text-4xl font-bold text-white">Transmissions</h1>
-        <p className="text-muted font-sans">Thoughts on security research, write-ups and methodologies.</p>
-      </div>
-
-      <div className="flex flex-col gap-4">
+    <div className="px-5 md:px-10 py-16 max-w-[1200px] mx-auto w-full">
+      <div className="section-label mb-6">Archive & Intel</div>
+      
+      <div className="grid-borders grid-cols-1 md:grid-cols-2 max-w-[900px]">
         {allPosts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-            <div className="brutalist-border p-6 flex flex-col gap-3 hover:bg-[#111111] transition-colors">
-              <div className="flex justify-between items-start gap-4">
-                <h2 className="font-mono text-xl font-bold text-white group-hover:text-accent transition-colors leading-tight">
-                  {post.title}
-                </h2>
-                <span className="font-mono text-xs text-muted whitespace-nowrap bg-black/50 px-2 py-1 brutalist-border">
-                  {post.date}
-                </span>
-              </div>
-              <p className="text-muted text-sm">{post.description}</p>
-              {post.tags && post.tags.length > 0 && (
-                <div className="flex gap-2 flex-wrap mt-2">
-                  {post.tags.map(tag => (
-                    <span key={tag} className="font-mono text-xs text-muted before:content-['#']">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
+          <div key={post.slug} className="grid-cell p-7 flex flex-col gap-3 group block">
+            <div className="font-mono text-[0.62rem] text-white-muted mb-1 px-2 py-[2px] border border-border-color rounded-[2px] self-start">
+              {post.date}
             </div>
-          </Link>
+            <Link href={`/blog/${post.slug}`} className="block">
+              <h2 className="font-serif text-[1.2rem] text-foreground group-hover:text-white transition-colors mb-2 leading-tight">
+                {post.title}
+              </h2>
+              <p className="text-[0.82rem] text-white-dim line-clamp-3 leading-[1.6]">
+                {post.description}
+              </p>
+            </Link>
+          </div>
         ))}
       </div>
     </div>

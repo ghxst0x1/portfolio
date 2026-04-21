@@ -1,39 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
+@source "../content";
 
 @layer base {
   .text-edge-outline {
-    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   }
-} 
+}
+
+@layer components {
+  /* Your Rehype Pretty Code Styles */
+
+  /* The main container for the code block */
+  figure[data-rehype-pretty-code-figure] {
+    @apply my-6 overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800;
+  }
+
+  [data-rehype-pretty-code-fragment] code {
+    @apply grid min-w-full break-words border-0 bg-transparent p-4 text-sm;
+    counter-reset: line;
+    box-decoration-break: clone;
+  }
+
+  [data-rehype-pretty-code-fragment] .line {
+    @apply px-4 py-1 border-l-2 border-transparent;
+  }
+
+  /* Line numbers styling */
+  [data-rehype-pretty-code-fragment] [data-line-numbers]>.line::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 1rem;
+    margin-right: 1.5rem;
+    text-align: right;
+    @apply text-zinc-500;
+  }
+
+  /* Highlighted lines */
+  [data-rehype-pretty-code-fragment] .line--highlighted {
+    @apply bg-zinc-800/50 border-l-blue-400;
+  }
+
+  [data-rehype-pretty-code-fragment] .line-highlighted span {
+    @apply relative;
+  }
+
+  /* Highlighted individual words */
+  [data-rehype-pretty-code-fragment] .word--highlighted {
+    @apply rounded-md bg-zinc-800 p-1 border border-zinc-700;
+  }
+
+  /* Code Title (e.g., filename) */
+  [data-rehype-pretty-code-title] {
+    @apply py-3 px-4 text-sm font-medium text-zinc-300 border-b border-zinc-800 bg-zinc-900/50;
+  }
+
+  [data-rehype-pretty-code-title]+pre {
+    @apply mt-0;
+  }
+}

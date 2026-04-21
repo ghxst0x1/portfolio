@@ -6,10 +6,10 @@ import { Card } from "../components/card";
 
 const socials = [
   {
-    icon: <Twitter size={20} />,
-    href: "https://twitter.com/Kn1ghtblood",
-    label: "Twitter",
-    handle: "@Kn1ghtblood",
+    icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width={20} />,
+    href: "https://www.linkedin.com/in/karthikr0x1/",
+    label: "Linkedin",
+    handle: "@karthikr0x1",
   },
   {
     icon: <Mail size={20} />,
@@ -27,13 +27,12 @@ const socials = [
 
 export default function Example() {
   return (
-    <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+    <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
       <Navigation />
       <div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
         <div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
           {socials.map((s) => (
-            // eslint-disable-next-line react/jsx-key
-            <Card>
+            <Card key={s.href}>
               <Link
                 href={s.href}
                 target="_blank"

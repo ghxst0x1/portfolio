@@ -19,12 +19,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  twitter: {
-    title: "Kn1ghtblood",
-    card: "summary_large_image",
-  },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/favicon.ico",
   },
 };
 
@@ -46,6 +42,7 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
         }`}
       >
+        {/* <Background /> */}
         {children}
       </body>
     </html>

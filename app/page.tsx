@@ -1,11 +1,10 @@
-import React from "react";
 import Link from "next/link";
 import Particles from "./components/particles";
 import Typer from "./components/typer";
 
 const navigation = [
-  // { name: "Projects", href: "/projects" },
-  { name: "Projects", href: "#" },
+  { name: "WhoamI?", href: "/blog/about-me" },
+  { name: "Blogs", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
